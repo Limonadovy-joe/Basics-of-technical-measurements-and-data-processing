@@ -4,6 +4,9 @@
 - [Kalibrace](#kalibrace)
 - [Adjustace](#adjustace)
 - [Presnost a preciznost](#presnost-a-preciznost)
+- [Třída přesnosti](#třída-přesnosti)
+- [Chyby měření](#chyby-měření)
+- [Teorie náhodných chyb](#teorie-náhodných-chyb)
 - [Notes](#notes)
 
 - **Metrology** is the scientific study of measurement, and also by creating measurement methods and investigating the relationship between the measured and the actual value of the quantity(veliciny). 
@@ -40,7 +43,7 @@ o hrubou chybu anebo např. o nějaký (třeba i neočekávaný) rezonanční je
 
 ## Kalibrace
 - je soubor úkonů, kterými se za **specifikovaných podmínek stanoví vztah mezi hodnotami veličin**, které jsou indikovány měřicím systémem a odpovídajícími hodnotami, které jsou realizovány **etalony (standardy).**
-- V některých případech se za kalibraci považuje i **adjustace výstupních hodnot měřícího systému** tak, aby odpovídaly hodnotám etalonů s definovanou přesností.
+- V některých případech se za kalibraci považuje i i n**adjustace výstupních hodnot měřícího systému** tak, aby odpovídaly hodnotám etalonů s definovanou přesností.
 - **Například kalibrací teploměru se stanoví chyba, se kterou teploměr měří,** a adjustací (například pomocí kalibračních konstant) se teploměr nastaví tak, aby indikoval skutečnou hodnotu teploty v daném bodě.
 - při provádění kalibrace měřícího zařízení se zjišťuje, **jakou chybou zařízení měří v porovnání s kalibračním standardem nebo referenčním standardem.**
 
@@ -50,12 +53,57 @@ o hrubou chybu anebo např. o nějaký (třeba i neočekávaný) rezonanční je
 
 
 ## Presnost a preciznost
+- **Presnost**
+  - accurancy
+  - je souhrnný pojem charakterizující **míru odchylek měření (chyb měření)** od **referenční, standartizovane hodnoty** (tj. hodnoty, která je pokládána za „správnou“)
+  - skutecna hodnota merene vel / namerenena hodnota
+  - **Pokud je poměr větší než jedna, měření je nadhodnocené**
+  - **Pokud je poměr menší než jedna, měření je podhodnocené** -  pokud teploměr v místnosti zobrazuje teplotu o několik stupňů nižší než skutečná teplota, je to příklad podhodnoceného měření. To může být způsobeno například umístěním teploměru v chladnější části místnosti, nedostatečnou expozicí k teplotnímu gradientu,
+- **Pravdivost**
+  - trueness
+  -  že průměr velkého počtu měření nebo zkoušek se blíží skutečné hodnotě měřené veličiny
+  -  **jedná se o systematickou chybu(soustavna - je dána přesností (nedokonalostí) měřicího přístroje a měřicí metody), o míru statistického zkreslení**
+- **Preciznost**
+  - precision
+  - se týká **těsnosti shody mezi výsledky měření**; **jedná se o míru rozptylu. <sup>[2](#notes)</sup>**
+  - **„preciznost“ (malý rozptyl měření => opakovatelnost nebo reprodukovatelnost)**
+ 
+## Třída přesnosti
+-  **t. prenosti přístroje (zkratkou například TP 1,5) je hodnota daná výrobcem přístroje**, ověřená a certifikovaná zkušebnou, že změřené hodnoty udávané přístrojem spadají do **rozptylového intervalu ±X % kolem skutečné hodnoty.**
+- **tolerančního rozpětí ±10%**
 - 
 
+## Chyby měření
+- Podle příčin vzniku dělíme chyby na soustavné a náhodné.
+  - **Soustavné chyby**
+    - (nebo též systematické chyby) ovlivňují výsledek měření zcela určitým způsobem, **s jistou pravidelností**. Systematičnost této chyby
+se projevuje tím, že měřené hodnoty veličiny jsou buď trvale **větší nebo menší, než je hodnota skutečná.**
+    - Zdrojem soustavných chyb bývají i měřicí přístroje a měřicí etalony. Lze je vyloučit cejchováním anebo užitím korekčních křivek přístrojů nebo tabulek.
+    - Kromě uvedených zdrojů soustavných chyb je dobré si uvědomit, že i samotný proces měření pomocí reálných přístrojů může ovlivňovat měřenou veličinu:
+    - **teploměr má nenulovou tepelnou kapacitu, ampérmetr nenulový odpor, voltmetr konečný odpor**
+  - **Náhodné chyby**
+    -  se vyznačují tím, že působením velmi rozmanitých přesně nedefinovatelných vlivů se hodnoty určité veličiny, naměřené přibližně za stejných podmínek měření, se liší.
+    -  Měření fyzikálních veličin představuje v důsledku působení náhodných chyb je **statistický proces s náhodnou proměnnou**
+    -  Pravděpodobnou hodnotu měřené **fyzikální veličiny a její chyby tak lze určit statistickými metodami.**
+    -  **Vliv náhodných chyb na výsledek měření klesá s počtem opakovaných měření.**
+
+- **Absolutni chyba**
+  - Hodnota x fyzikální veličiny zjištěná měřením (tj. **u skalární veličiny její veli-kost, u vektorové veličiny také její směr anebo velikost jejich složek**) se vždy
+o něco liší od její skutečné hodnoty x0 (bohužel neznámé). Rozdíl hodnoty naměřené a skutečné se nazývá **skutečná chyba ε** (absolutní chyba): `ε = x − x0`.
+  - Tato chyba má jednotku měřené veličiny
+- **Relativní chyba**
+  - http://fyzikalniolympiada.cz/texty/mereni.pdf
+  - Podle **ČSN** 61557 může být relativní pracovní chyba měření maximálně 30%.
+
+## Teorie náhodných chyb
 
 
 
 
 
-# Notes
+
+
+## Notes
 - **rezonanční maximum** - 
+- **mira rozptylu** - fluktuace, variance nebo také disperze, která vyjadřuje **variabilitu rozdělení souboru náhodných hodnot kolem její střední hodnoty.**
+- **amplituda** - rozkmit, výchylka, odchylka,  **maximální hodnota periodicky proměnné fyzikální veličiny**
