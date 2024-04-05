@@ -7,6 +7,8 @@
 - [Třída přesnosti](#třída-přesnosti)
 - [Chyby měření](#chyby-měření)
 - [Teorie náhodných chyb](#teorie-náhodných-chyb)
+- [Regresní metody](#regresní-metody)
+- [Interpolace](#interpolace)
 - [Notes](#notes)
 
 - **Metrology** is the scientific study of measurement, and also by creating measurement methods and investigating the relationship between the measured and the actual value of the quantity(veliciny). 
@@ -96,14 +98,75 @@ o něco liší od její skutečné hodnoty x0 (bohužel neznámé). Rozdíl hodn
   - Podle **ČSN** 61557 může být relativní pracovní chyba měření maximálně 30%.
 
 ## Teorie náhodných chyb
+- Náhodné jevy, mezi něž patří i fyzikální měření zatížené náhodnými chybami, nelze chápat jako **negaci příčinné podmíněnosti (kauzality)**, neboť všechny jevy
+reálného světa jsou příčinně podmíněny - **determinismus**
+- U jevů, které označujeme jako náhodné, jde o to, že skutečné příčiny jsou tak rozmanité a složité, že jejich vliv nejsme schopni v daném okamžiku postihnout.
+- jednak proto, že jich je velké množství a jednak proto, že naše znalosti o určitých jevech jsou nedostačující, **abychom mohli jejich vliv kvantitativně analyzovat.**
+
+- **Přesto lze náhodné jevy matematicky popsat zákony, které nám poskytuje počet/teorie pravděpodobnosti**, postupně budovaný od počátku 17. století a spojený se jmény **B. Pascal, Jakob Bernoulli, P. S. Laplace, J. L. Lagrange, S. D. Poisson** a zejména se jménem německého matematika a fyzika **K. F. Gausse (1777 - 1855), který vypracoval teorii chyb a metodu nejmenších čtverců.**
+- Náhodná proměnná se může měnit zásadně dvojím způsobem:
+  - **Diskrétní náhodná proměnná může nabývat jen určitých číselných hodnot.**
+    - Disrétní náhodné proměnné jsou charakterizovány **pravděpodobnostní funkcí**
+    - pravděpodobnosti jednotlivých hodnot sčítají
+    - taková, která může nabývat pouze jednotlivých hodnot (celých čísel) z konečného nebo nekonečného intervalu, tzn. **může se měnit jen po skocích.**
+  - **Spojitá náhodná proměnná může nabývat libovolných hodnot z určitého (omezeného nebo neomezeného) intervalu.**
+    - spojité náhodné proměnné používají **hustotu pravděpodobnosti.**
+    -  pravděpodobnosti určitých intervalů hodnot obvykle získávají integrací hustoty pravděpodobnosti.
+
+- Spojitou náhodnou veličinu můžeme převést na nespojitou tak, že její průběh rozdělíme do intervalů a každý interval nebude reprezentovat nekonečně hodnot, jak je tomu u spojité náhodné veličiny, ale jen jedna hodnota, **obvykle střední hodnota intervalu. Např. spojitou náhodnou veličinu dojivost dojnice nabývající všech hodnot, např. od 5 do 15 kg rozdělíme do intervalů 5-7 kg, 7-9 kg, 9-11 kg, 11-13 kg, 13-15 kg a tak získáme nespojitou náhodnou veličinu nabývající hodnot 6, 8, 10, 12, 14 kg.**
+- Nespojitou náhodnou veličinu na spojitou obvykle nepřevádíme, protože bychom se mohli dopustit nemožných závěrů. Např. nespojitou náhodnou veličinu počet mláďat v králičím vrhu nelze převést na spojitou náhodnou veličinu, protože počet mláďat 5,35 ve vrhu je nemožný (0,35 mláděte nemůže nastat). 
+
+
+- Náhodné chyby měření ve své podstatě mohou nabývat libovolné hodnoty, **proto je můžeme považovat za spojité náhodné proměnné.**
+- Náhodné chyby měření mohou nabývat kladných a záporných hodnot.
+- Empiricky můžeme zjistit důležitý poznatek, že při **velkém počtu měření se vyskytne zhruba stejný počet náhodných chyb kladných i záporných a že malé chyby jsou početnější než chyby větší.**
+
+- **Gaussovo rozložení u chyb**
+  -  Abychom však mohli vypočítat **pravděpodobnost výskytu náhodné chyby určité velikosti ε,** musíme znát funkci p(ε), tj. zákon **rozdělení těchto chyb.**
+  -  Významným parametrem v (3) je míra přesnosti h, **neboť s rostoucím h roste četnost malých chyb a křivka se stává štíhlejší (obr. 1).** Neboli se zvětšujícím se h roste počet správnějších výsledků s menší náhodnou chybou, což odpovídá přesnějšímu měření uvažované veličiny.
+  -  **pravděpodobnost vzniku kladné nebo záporné chyby určité velikosti je stejná**
+  -  **malé chyby jsou pravděpodobnější (četnější) než velké - pravděpodobnost výskytu chyb je funkcí jejich velikosti;**
+  -  **chyby nad určitou mez se nevyskytují (při překročení meze je považujeme za hrubé - nenáleží do základního souboru náhodných chyb).**
 
 
 
+## Regresní metody
+- Regresní analýza je označení statistických metod, pomocí nichž odhadujeme **hodnotu jisté náhodné veličiny** (takzvané **závisle proměnné, nazývané též cílová proměnná, regresand anebo vysvětlovaná proměnná**) na základě znalosti jiných veličin (**nezávisle proměnných, regresorů, kovariát anebo vysvětlujících proměnných**).
+- Modely regresivní analýzy:
+  - **Lineární regrese**
+    - analýze vztahu mezi dvěma nebo více proměnnými. **Hlavním cílem lineární regrese je modelovat lineární vztah mezi nezávislou proměnnou (označenou obvykle jako XX) a závislou proměnnou (označenou obvykle jako YY)**
+  - **Polynomická či polynomiální regrese** představuje proložení (aproximaci) zadaných hodnot **polynomem - mnohoclen**.
+  - **Logistická regrese**
+    - zabývající se problematikou **odhadu pravděpodobnosti nějakého jevu (závisle proměnné)** na základě určitých známých skutečností (nezávisle proměnných), které mohou ovlivnit výskyt jevu.
+    - Využití nachází i v lingvistice při **zpracování přirozeného jazyka - NLP**
+    -  používaná k modelování pravděpodobnosti binárního výstupu na základě jedné nebo více nezávislých proměnných. **Hlavním cílem logistické regrese je predikce pravděpodobnosti, že daná událost nastane (například 1 pro "úspěch" nebo "ano" a 0 pro "neúspěch" nebo "ne").**
+    - **Klasifikace**: Jedním z hlavních použití logistické regrese je klasifikace, kde se snažíme přiřadit **kategorie na základě nezávislých proměnných**. Například můžeme použít logistickou regresi k predikci pravděpodobnosti, že zákazník koupí produkt na základě demografických údajů.  
+
+
+## Interpolace
+- nalezení **přibližné hodnoty funkce v nějakém intervalu**, **je-li její hodnota známa jen v některých jiných bodech tohoto intervalu.**
+- Používá se v případě, že hodnoty funkce v určitých bodech intervalu jsou buďto uvedeny v tabulce, anebo získány měřením.
+- V geometrii znamená interpolace **prokládání daných (změřených) bodů křivkou, konstrukce křivky, která danými body prochází.** Od aproximace se liší tím, že hledaná křivka všemi známými (změřenými) **body přesně prochází.**
+- **extrapolace**, které označuje **nalézání přibližné hodnoty funkce mimo interval známých hodnot**, což je obvykle méně spolehlivé.
+- pro n = 2 lineární interpolace (**přímkou**),
+- pro n = 3 kvadratická interpolace (**parabolou nebo kružnicí**)
+- pro n > 3 interpolace polynomem n-tého stupně;
+
+Interpolace a extrapolace - slouží k odhadování hodnot, ale v různých kontextech.
+- Interpolace je proces odhadu hodnoty mezi známými datovými body. Používá se k nalezení hodnoty v rámci intervalu nebo rozsahu, který je definován existujícími daty. Interpolace předpokládá, **že mezi známými body existuje spojitý vztah, a proto se snaží nalézt hodnotu, která leží na této spojité křivce.** Interpolace se často používá při **výpočtu středních hodnot,** při vytváření plynulých grafů nebo **při nahrazování chybějících hodnot v datových sadách.**
+- Extrapolace je proces odhadu hodnoty **mimo rozsah existujících datových bodů.** Používá se k predikci hodnoty za hranicemi známých dat. **Extrapolace předpokládá, že trend nebo vztah mezi daty, který je pozorován uvnitř známého rozsahu, bude pokračovat mimo tento rozsah.** Nicméně je důležité poznamenat, že extrapolace může být nebezpečná, protože předpokládá, že vztah mezi daty se zachová i mimo známý rozsah, což nemusí být vždy pravda.
 
 
 
 
 ## Notes
-- **rezonanční maximum** - 
+- **rezonanční maximum** - Rezonanční křivka je graf, který charakterizuje **odezvu systému na externí podnět nebo signál v závislosti na frekvenci tohoto podnětu.** 
 - **mira rozptylu** - fluktuace, variance nebo také disperze, která vyjadřuje **variabilitu rozdělení souboru náhodných hodnot kolem její střední hodnoty.**
 - **amplituda** - rozkmit, výchylka, odchylka,  **maximální hodnota periodicky proměnné fyzikální veličiny**
+- **metodu nejmenších čtverců** - metoda pro **aproximaci** řešení přeurčených soustav rovnic (tj. soustav, kde je více rovnic, než neznámých).
+  - Metoda bývá často používána při regresní analýze pro **aproximaci zadaných (naměřených) hodnot nějakou funkcí z předepsaného prostoru.**
+  - Nejjednodušším příkladem je **proložení (aproximace) dat přímkou, tedy lineární funkcí**
+  - **často považována za ekvivalent pojmu lineární regrese.**
+
+ 
+  
