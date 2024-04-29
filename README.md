@@ -162,7 +162,7 @@ Interpolace a extrapolace - slouží k odhadování hodnot, ale v různých kont
 ## Notes
 - **rezonanční maximum** - Rezonanční křivka je graf, který charakterizuje **odezvu systému na externí podnět nebo signál v závislosti na frekvenci tohoto podnětu.** 
 - **mira rozptylu** - fluktuace, variance nebo také disperze, která vyjadřuje **variabilitu rozdělení souboru náhodných hodnot kolem její střední hodnoty.**
-- **amplituda** - rozkmit, výchylka, odchylka,  **maximální hodnota periodicky proměnné fyzikální veličiny**
+- **amplituda** - rozkmit, výchylka, odchylk - **maximální hodnota periodicky proměnné fyzikální veličiny**
 - **metodu nejmenších čtverců** - metoda pro **aproximaci** řešení přeurčených soustav rovnic (tj. soustav, kde je více rovnic, než neznámých).
   - Metoda bývá často používána při regresní analýze pro **aproximaci zadaných (naměřených) hodnot nějakou funkcí z předepsaného prostoru.**
   - Nejjednodušším příkladem je **proložení (aproximace) dat přímkou, tedy lineární funkcí**
